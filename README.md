@@ -91,9 +91,23 @@ In order to create a local copy of the project you need:
        [Install]
        WantedBy=multi-user.target
 
+       sudo systemctl daemon-reexec
+       sudo systemctl daemon-reload
+       sudo systemctl start tomcat
+       sudo systemctl enable tomcat
+
+       sudo systemctl status tomcat
+
+       
        
    
-7. 
+7. Change or add maxPostSize in Tomcat server.xml to maxPostSize="10485760" or more
+8. Run this in project directory:
+
+       gradle clean war
+
+9. If everything went well in build/libs/ will be "class_schedule.war" which u need rename as "ROOT.war"
+10. Then u need to delete /opt/tomcat/webapps/ROOT and copy build/libs/ROOT.war to this folder
 
 ## Starting frontend server using Node.js
 1. Download and install Node.js 14.17.4 LTS version https://nodejs.org/en/
