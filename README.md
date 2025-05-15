@@ -6,40 +6,48 @@ The main goal of the project is designing a website where the university or inst
 
 Link to the development version of the site: https://develop-softserve.herokuapp.com/
 
+## Dockerless
+
 ## Creating a local repository
 In order to create a local copy of the project you need:
 1. Download and install the last version of Git https://git-scm.com/downloads
 2. Open a terminal and go to the directory where you want to clone the files. 
 3. Run the following command. Git automatically creates a folder with the repository name and downloads the files there.
 
-       https://github.com/kaashntr/internship_project
-4. Enter your username and password if GitLab requests.
+       git clone https://github.com/kaashntr/internship_project.git
 
 ## Database
 1. Download and install the last version of PostgreSQL https://www.postgresql.org/download/
-2. Configure your username, password and connection url in `hibernate.properties` file
+2. Configure your username, password and connection url in `src/main/resources/hibernate.properties` file
+3. Create USER in db with:
 
-##Redis
+       CREATE USER tomcat WITH PASSWORD 'your_password_here';
+
+4. Create DATABASE for user with:
+
+       CREATE DATABASE schedule OWNER tomcat;
+
+5. Grant All Privileges with:
+
+       GRANT ALL PRIVILEGES ON DATABASE schedule TO tomcat;
+       GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO tomcat;
+
+
+## Redis
 1. Download and install the last version of Redis  https://redis.io/download
-2. Configure connection url in `cache.properties` file
+2. Configure connection url in `src/main/resources/cache.properties` file
 
-## Starting backend server using IntelliJ IDEA and Tomcat
-1. Download and install the Ultimate version of IntelliJ IDEA (alternatively you can use a trial or EAP version) https://www.jetbrains.com/idea/download
-2. Download and install Tomcat 9.0.50 https://tomcat.apache.org/download-90.cgi
-3. Start the IDE and open class_schedule.backend project from the folder where you previously download it.
-4. Make sure Tomcat and TomEE Integration is checked (`File –>> Settings –>> Plugins`).
-5. `Run –>> Edit Configurations…`
-6. Clicks `+` icon, select `Tomcat Server –>> Local`
-7. Clicks on “Server” tab, then press `Configure...` button and select the directory with Tomcat server
-8. Clicks on “Deployment” tab, then press `+` icon to select an artifact to deploy, and select `Gradle:com.softserve:class_schedule.war`
-9. Press OK to save the configuration
-10. `Run –>> Run 'Tomcat 9.0.50'` to start the backend server
+## MongoDB
+1. Download and install last version of MongoDB https://www.mongodb.com/docs/manual/administration/install-on-linux/
+2. Configure connection url in `src/main/resources/mongo.properties` file
+
 
 ## Starting frontend server using Node.js
 1. Download and install Node.js 14.17.4 LTS version https://nodejs.org/en/
 2. Open a terminal in `/frontend` directory of the downloaded project and run the following command.
+3. 
 
        npm install
-3. After the installation is finished run the following command to start the frontend server
+4. After the installation is finished run the following command to start the frontend server
 
        npm start](https://github.com/kaashntr/internship_project)
