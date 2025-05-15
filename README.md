@@ -1,4 +1,4 @@
-# Class chedule
+[# Class chedule
 ## General info
 This repository contains a source code of the Class Schedule Project.
 
@@ -12,7 +12,7 @@ In order to create a local copy of the project you need:
 2. Open a terminal and go to the directory where you want to clone the files. 
 3. Run the following command. Git automatically creates a folder with the repository name and downloads the files there.
 
-       git clone https://gitlab.com/class_schedule/class_schedule.backend.git
+       https://github.com/kaashntr/internship_project
 4. Enter your username and password if GitLab requests.
 
 ## Database
@@ -42,4 +42,4 @@ In order to create a local copy of the project you need:
        npm install
 3. After the installation is finished run the following command to start the frontend server
 
-       npm start
+       npm start](https://github.com/kaashntr/internship_project)
